@@ -2,6 +2,14 @@
 #define _PRINTF_H_
 
 #define BUFSIZE MAXLENGTH
+#define BUFF_SIZE 1024
+
+/* FLAGS */
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
 
 /* Importing Libraries */
 
@@ -28,5 +36,10 @@ typedef struct format
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_binary(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_unsigned(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_octal(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_hexadecimal(va_list types, char buffer[], int flags, int width, int precision, int size);
+int print_hexa_upper(va_list types, char buffer[], int flags, int width, int precision, int size);
 
 #endif
